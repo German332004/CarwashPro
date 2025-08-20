@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoLavado Digital - Redireccionando</title>
+    
+    <script>
+      // Redirección para GitHub Pages SPA
+      var path = window.location.pathname;
+      var isAsset = /\.(css|js|png|jpg|jpeg|gif|ico|json)$/i.test(path);
+      
+      if (!isAsset) {
+        sessionStorage.redirect = path + window.location.search;
+        window.location.href = '/autolavado-digital/';
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <h1>Redireccionando...</h1>
+      <p>Por favor, <a href="/autolavado-digital/">haz clic aquí</a> si no eres redirigido.</p>
+    </noscript>
+  </body>
+</html>

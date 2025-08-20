@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/autolavado-digital/static/css/main.61fc2695.css",
+    "main.js": "/autolavado-digital/static/js/main.6fa0e67c.js",
+    "static/js/52.f9294cfd.chunk.js": "/autolavado-digital/static/js/52.f9294cfd.chunk.js",
+    "static/js/82.21cb1866.chunk.js": "/autolavado-digital/static/js/82.21cb1866.chunk.js",
+    "static/js/239.2007b0b8.chunk.js": "/autolavado-digital/static/js/239.2007b0b8.chunk.js",
+    "index.html": "/autolavado-digital/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.61fc2695.css",
+    "static/js/main.6fa0e67c.js"
+  ]
+}
