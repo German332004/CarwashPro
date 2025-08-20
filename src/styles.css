@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* styles.css */
+.fc .fc-toolbar-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #1e40af;
+}
+
+.fc .fc-button {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.fc .fc-button:hover {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.fc-event {
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.fc-event:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+/* styles.css */
+select option:disabled {
+  color: #e53e3e;
+  background-color: #fed7d7;
+}
+
+/* Mejorar la visualización de opciones deshabilitadas */
+select option {
+  padding: 8px;
+}
+/* Estilos para mejorar la experiencia móvil */
+@layer utilities {
+  .safe-area-padding {
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+}
+
+/* Mejorar scroll en móvil */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevenir zoom en inputs en iOS */
+@media screen and (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Mejorar botones táctiles */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Ocultar scrollbar pero mantener funcionalidad */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
