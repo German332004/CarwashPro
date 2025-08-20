@@ -1,33 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
   <head>
     <meta charset="utf-8">
-    <!-- AÑADE ESTA LÍNEA PARA SOLUCIONAR EL ERROR -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoLavado Digital - Redireccionando</title>
-    
-    <!-- Script para manejar la redirección -->
+    <title>AutoLavado Digital</title>
     <script>
-      // Redirige todas las rutas a index.html
-      sessionStorage.redirect = location.pathname + location.search;
+      sessionStorage.redirect = location.pathname;
     </script>
-    
-    <!-- Redirección instantánea -->
-    <meta http-equiv="refresh" content="0;URL='/autolavado-digital'">
+    <meta http-equiv="refresh" content="0;URL='/autolavado-digital/'">
   </head>
   <body>
-    <!-- Mensaje de redirección para usuarios sin JavaScript -->
     <noscript>
       <h1>Redireccionando...</h1>
-      <p>Si no eres redirigido automáticamente, 
-        <a href="/autolavado-digital">haz clic aquí</a>.
-      </p>
+      <p>Por favor, <a href="/autolavado-digital/">haz clic aquí</a>.</p>
     </noscript>
-    
-    <!-- Contenido de respaldo -->
-    <div style="display: none;">
-      <h1>AutoLavado Digital</h1>
-      <p>Redireccionando a la aplicación principal...</p>
-    </div>
   </body>
 </html>
