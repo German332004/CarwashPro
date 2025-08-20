@@ -1,7 +1,7 @@
 {
-  "name": "autolavado-digital",
+  "name": "carwashpro",
   "version": "1.0.0",
-  "homepage": "https://tuusuario.github.io/autolavado-digital",
+  "homepage": "https://german332004.github.io/CarwashPro",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
