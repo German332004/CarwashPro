@@ -35,7 +35,7 @@ export default function LoginPage() {
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-700">
-              AutoLavado Digital
+              CarwashPro
             </span>
           </h1>
           <p className="text-gray-600">Ingresa a tu cuenta</p>
