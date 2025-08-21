@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { loginUser } from '../services/firebase';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -81,9 +82,9 @@ export default function LoginPage() {
           
           <p className="mt-6 text-center text-gray-600">
             ¿No tienes cuenta?{' '}
-            <a href="/register" className="text-blue-600 hover:underline font-medium">
-              Regístrate aquí
-            </a>
+            <Link to="/register" className="text-purple-600 hover:underline font-medium">
+            Regístrate aquí
+            </Link>
           </p>
         </div>
 
