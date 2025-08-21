@@ -44,11 +44,20 @@ export const onAuthChange = (callback) => {
 // Agregar un turno
 export const addTurno = async (turnoData) => {
   try {
+    // ✅ OBTENER el usuario actual PRIMERO
+    const user = auth.currentUser;
+    if (!user) {
+      throw new Error("Usuario no autenticado");
+    }
+
     const turnoConTimestamp = {
       ...turnoData,
+      userId: user.uid,  // ✅ ¡AGREGAR ESTA LÍNEA!
       createdAt: serverTimestamp(),
       estado: 'pendiente'
     };
+    
+    console.log('📤 Enviando a Firestore:', turnoConTimestamp); // ✅ Para debug
     
     const docRef = await addDoc(collection(db, 'turnos'), turnoConTimestamp);
     return docRef.id;
