@@ -3,23 +3,34 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+
+# ✅ AGREGAR ESTOS PERMISOS:
+permissions:
+  contents: read
+  pages: write
+  id-token: write  # ✅ Este es el permiso faltante
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+        
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
-      
+          
       - name: Install dependencies
         run: npm ci
-      
+        
       - name: Build with environment variables
         run: |
           echo "REACT_APP_FIREBASE_API_KEY=${{ secrets.REACT_APP_FIREBASE_API_KEY }}" > .env
@@ -30,24 +41,15 @@ jobs:
           echo "REACT_APP_FIREBASE_APP_ID=${{ secrets.REACT_APP_FIREBASE_APP_ID }}" >> .env
           echo "REACT_APP_FIREBASE_MEASUREMENT_ID=${{ secrets.REACT_APP_FIREBASE_MEASUREMENT_ID }}" >> .env
           npm run build
-      
-      - name: Fix GitHub Pages paths
-        run: |
-          # Crear 404.html para SPA
-          cp build/index.html build/404.html
           
-          # Corregir rutas en archivos
-          find build -name '*.html' -exec sed -i 's|="/|="./|g' {} \;
-          find build -name '*.js' -exec sed -i 's|="/|="./|g' {} \;
-          find build -name '*.css' -exec sed -i 's|url(/|url(./|g' {} \;
-      
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './build'
-      
+          
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
